@@ -37,6 +37,8 @@ const RESERVED_KEYWORDS = [
   "messenger",
   "freelancer",
   "pricing",
+  "book",
+  "booking"
 ];
 
 // URL detection (strict)
