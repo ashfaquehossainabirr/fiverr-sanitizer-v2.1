@@ -57,7 +57,7 @@ h1 {
 
 .textarea:focus {
   border-color: #10b77f;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 0 3px rgba(16, 183, 127, 0.15);
 }
 
 .textarea.error {
