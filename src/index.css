@@ -411,7 +411,3 @@ h1 {
   max-height: 500px;
   overflow-y: auto;
 }
-
-.app-container .card .grid .column.msg .msg-col textarea.textarea {
-  max-height: 420px;
-}
