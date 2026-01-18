@@ -281,6 +281,7 @@ h1 {
 }
 
 .textarea {
+  max-height: 350px;
   min-height: 220px;
 }
 
