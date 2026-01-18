@@ -406,3 +406,8 @@ h1 {
   /* Prevent editing */
   cursor: text;
 }
+
+.app-container .card .grid .column .preview.translate-area {
+  max-height: 600px;
+  overflow-y: auto;
+}
