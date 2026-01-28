@@ -115,7 +115,20 @@ export default function App() {
           {/* LEFT COLUMN */}
           <div className="column msg">
             <div className="msg-col">
-              <label className="label">Your Message</label>
+              <div className="message-label-wrapper">
+                <label className="label">Your Message</label>
+
+                {message && (
+                  <button
+                    className="clear-btn"
+                    onClick={() => setMessage("")}
+                    aria-label="Clear input"
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+
               <textarea
                 className={`textarea ${hasRestricted ? "error" : ""}`}
                 placeholder="Type your message here..."

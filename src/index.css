@@ -411,3 +411,16 @@ h1 {
   max-height: 500px;
   overflow-y: auto;
 }
+
+.clear-btn {
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+  color: #fff;
+  background: #2563eb;
+}
