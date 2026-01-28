@@ -412,6 +412,12 @@ h1 {
   overflow-y: auto;
 }
 
+.message-label-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .clear-btn {
   font-size: 12px;
   font-weight: 600;
