@@ -422,7 +422,7 @@ h1 {
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: 6px;
   border: none;
   transition: all 0.2s ease;
 }
