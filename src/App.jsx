@@ -116,7 +116,7 @@ export default function App() {
           <div className="column msg">
             <div className="msg-col">
               <div className="message-label-wrapper">
-                <label className="label">Your Message</label>
+                <label className="label">Your Message ({ message.length } Characters)</label>
 
                 {message && (
                   <button
