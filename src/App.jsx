@@ -166,7 +166,7 @@ export default function App() {
                   🌐 Translate
                 </button>
 
-                <button className="fix-grammar-btn" onClick={fixGrammar}>
+                <button className="fix-grammar-btn" onClick={fixGrammar} disabled={!sanitizedMessage}>
                   <span className="icon">✓</span>
                   <span className="text">Fix</span>
                 </button>
