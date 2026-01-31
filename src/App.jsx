@@ -109,6 +109,11 @@ export default function App() {
           <p className="subtitle">
             Sanitize restricted keywords and translate safely to Bengali for Fiverr communication.
           </p>
+
+          {/* Credit */}
+          <p className="subtitle">
+            Developed By Ashfaque Hossain Abir
+          </p>
         </div>
 
         <div className="grid">
