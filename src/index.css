@@ -441,3 +441,9 @@ h1 {
   color: #fff;
   background: #ff0000;
 }
+
+@media screen and (max-width: 500px) {
+  body {
+    height: 100%;
+  }
+}
