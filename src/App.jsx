@@ -128,7 +128,7 @@ export default function App() {
             <div className="msg-col">
               <div className="message-label-wrapper">
 
-                <label className="label">Your Message ({ sanitizedMessage.length > 0 ? sanitizedMessage.replace(/\s/g, "").length : 0 } Characters)</label>
+                <label className="label">Your Message ({ sanitizedMessage.length > 0 ? sanitizedMessage.length : sanitizedMessage.replace(/\s/g, "").length } Characters)</label>
 
                 {/* {(sanitizedMessage.replace(/\s/g, '').length >= 1) && <label className="label">Your Message ({sanitizedMessage.length} Characters)</label>} */}
                 {message && (
