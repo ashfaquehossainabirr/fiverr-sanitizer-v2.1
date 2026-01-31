@@ -4,12 +4,12 @@
 }
 
 a {
+  color: #047857;
   display: inline-block;
   text-decoration: none;
 }
 
 a:hover {
-  color: #1d4ed8;
   text-decoration: underline;
 }
 
