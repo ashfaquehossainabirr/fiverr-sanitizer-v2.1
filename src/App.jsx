@@ -180,7 +180,7 @@ export default function App() {
             </div>
 
             <div className="preview translate-area">
-              {sanitizedMessage || "Nothing to preview yet."}
+              {(sanitizedMessage.replace(/\s/g, '').length >= 1) ? sanitizedMessage : "Nothing to preview yet."}
             </div>
 
 
