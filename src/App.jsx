@@ -100,12 +100,6 @@ export default function App() {
     document.head.appendChild(style);
   }, []);
 
-  const wordCount =
-    sanitizedMessage.trim().length === 0
-      ? 0
-      : sanitizedMessage.trim().split(/\s+/).length;
-
-
 
   return (
     <div className="app-container">
@@ -130,7 +124,7 @@ export default function App() {
 
                 {/* {(sanitizedMessage.replace(/\s/g, '').length >= 1) && <label className="label">Your Message ({sanitizedMessage.length} Characters)</label>} */}
 
-                if(sanitizedMessage.replace(/\s/g, '').length >= 1) {
+                if({sanitizedMessage.replace(/\s/g, '').length >= 1}) {
                   <label className="label">Your Message ({sanitizedMessage.length} Characters)</label>
                 } else {
                   <label className="label">Your Message (0 Characters)</label>
