@@ -100,6 +100,12 @@ export default function App() {
     document.head.appendChild(style);
   }, []);
 
+  const wordCount =
+    sanitizedMessage.trim().length === 0
+      ? 0
+      : sanitizedMessage.trim().split(/\s+/).length;
+
+
   
   return (
     <div className="app-container">
@@ -121,7 +127,7 @@ export default function App() {
           <div className="column msg">
             <div className="msg-col">
               <div className="message-label-wrapper">
-                <label className="label">Your Message ({ sanitizedMessage.replace(/\s/g, "").length } Characters)</label>
+                <label className="label">Your Message ({ sanitizedMessage.length } Characters)</label>
 
                 {message && (
                   <button
