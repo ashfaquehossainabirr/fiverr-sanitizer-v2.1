@@ -3,6 +3,16 @@
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont;
 }
 
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
 body {
   margin: 0;
   background-image: url('../public/background_img.png');

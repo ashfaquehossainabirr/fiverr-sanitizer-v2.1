@@ -112,7 +112,7 @@ export default function App() {
 
           {/* Credit */}
           <p className="subtitle">
-            Developed By Ashfaque Hossain Abir
+            Developed By <a href="https://bd.linkedin.com/in/ashfaque-hossain-abir-91151723b">Ashfaque Hossain Abir</a>
           </p>
         </div>
 
@@ -121,8 +121,6 @@ export default function App() {
           <div className="column msg">
             <div className="msg-col">
               <div className="message-label-wrapper">
-
-                {/* {(sanitizedMessage.replace(/\s/g, '').length >= 1) && <label className="label">Your Message ({sanitizedMessage.length} Characters)</label>} */}
 
                 <label className="label">Your Message ({(sanitizedMessage.replace(/\s/g, '').length >= 1) ? sanitizedMessage.length : sanitizedMessage.replace(/\s/g, "").length} Characters)</label>
 
