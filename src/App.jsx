@@ -106,7 +106,7 @@ export default function App() {
       : sanitizedMessage.trim().split(/\s+/).length;
 
 
-  
+
   return (
     <div className="app-container">
       <div className="card">
@@ -127,8 +127,8 @@ export default function App() {
           <div className="column msg">
             <div className="msg-col">
               <div className="message-label-wrapper">
-                <label className="label">Your Message ({ sanitizedMessage.length } Characters)</label>
-
+                {/* <label className="label">Your Message ({ sanitizedMessage.length } Characters)</label> */}
+                {(sanitizedMessage.length >= 1) && <label className="label">Your Message ({sanitizedMessage.length} Characters)</label>}
                 {message && (
                   <button
                     className="clear-btn"
@@ -199,7 +199,7 @@ export default function App() {
 
           </div>
         </div>
-        
+
       </div>
     </div>
   );
