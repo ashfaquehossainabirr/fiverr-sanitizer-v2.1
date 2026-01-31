@@ -124,7 +124,7 @@ export default function App() {
 
                 {/* {(sanitizedMessage.replace(/\s/g, '').length >= 1) && <label className="label">Your Message ({sanitizedMessage.length} Characters)</label>} */}
 
-                <label className="label">Your Message ({(sanitizedMessage.replace(/\s/g, '').length >= 1) ? <label className="label">Your Message ({sanitizedMessage.length} Characters)</label> : <label className="label">Your Message ({sanitizedMessage.replace(/\s/g, "").length} Characters)</label>} Characters)</label>
+                <label className="label">Your Message ({(sanitizedMessage.replace(/\s/g, '').length >= 1) ? sanitizedMessage.length : sanitizedMessage.replace(/\s/g, "").length} Characters)</label>
 
                 {message && (
                   <button
