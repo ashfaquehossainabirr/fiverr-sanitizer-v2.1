@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { sanitizeText, containsRestrictedContent } from "./sanitizer";
 
 export default function App() {
+
+  // Fix Grammer Functionality
   const fixGrammar = async () => {
     if (!message.trim()) return;
 
@@ -48,6 +50,7 @@ export default function App() {
   };
 
 
+  // Message Input Functionality Handler
   const [message, setMessage] = useState("");
   const [copied, setCopied] = useState(false);
 
