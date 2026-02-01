@@ -103,6 +103,10 @@ export default function App() {
     document.head.appendChild(style);
   }, []);
 
+  // Message Characters Limit Functionality
+  const LIMIT = 2500;
+  const isExceeded = sanitizedMessage.length > LIMIT;
+
 
   return (
     <div className="app-container">
@@ -125,7 +129,10 @@ export default function App() {
             <div className="msg-col">
               <div className="message-label-wrapper">
 
-                <label className="label">Your Message ({(sanitizedMessage.replace(/\s/g, '').length >= 1) ? sanitizedMessage.length : sanitizedMessage.replace(/\s/g, "").length} Characters)</label>
+                <label className="label">Your Message 
+                        <span style={{ color: isExceeded ? "red" : "#000" }}>
+                            ({(sanitizedMessage.replace(/\s/g, '').length >= 1) ? sanitizedMessage.length : sanitizedMessage.replace(/\s/g, "").length} Characters)
+                        </span></label>
 
                 {message && (
                   <button
