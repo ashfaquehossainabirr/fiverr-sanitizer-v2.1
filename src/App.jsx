@@ -123,6 +123,7 @@ export default function App() {
           </p>
         </div>
 
+        {/* Message Input */}
         <div className="grid">
           {/* LEFT COLUMN */}
           <div className="column msg">
