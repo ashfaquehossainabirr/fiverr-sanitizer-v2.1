@@ -73,6 +73,9 @@ export default function App() {
     URL.revokeObjectURL(url);
   };
 
+  const handleChange = (e) => {
+    setMessage(e.target.value)
+  }
 
   const handleCopy = async () => {
     if (!sanitizedMessage) return;
@@ -149,7 +152,7 @@ export default function App() {
                 className={`textarea ${hasRestricted ? "error" : ""}`}
                 placeholder="Type your message here..."
                 value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                onChange={ handleChange }
               />
             </div>
 
