@@ -442,8 +442,26 @@ h1 {
   background: #ff0000;
 }
 
+.time-comp {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+p.time-box {
+  color: #fff;
+}
+
+p.date-box {
+  color: #fff;
+}
+
 @media screen and (max-width: 768px) {
   body {
     background-size: auto;
+  }
+
+  .time-comp {
+    display: none;
   }
 }
