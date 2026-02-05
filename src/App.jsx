@@ -153,7 +153,7 @@ export default function App() {
                 <div className="message-label-wrapper">
 
                   <label className="label">Your Message <span style={{ color: isExceeded ? "red" : "#000" }}>
-                        ({(sanitizedMessage.replace(/\s/g, '').length >= 1) ? sanitizedMessage.length : sanitizedMessage.replace(/\s/g, "").length} Characters)</span>
+                        ({(sanitizedMessage.replace(/\s/g, '').length >= 1) ? sanitizedMessage.length : sanitizedMessage.replace(/^\s+/, "").length} Characters)</span>
                   </label>
 
                   {message && (
