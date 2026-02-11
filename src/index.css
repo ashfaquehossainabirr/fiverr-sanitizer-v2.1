@@ -456,6 +456,12 @@ p.date-box {
   color: #fff;
 }
 
+@media screen and (max-width: 1440px) {
+  body {
+    background-size: auto;
+  }
+}
+
 @media screen and (max-width: 768px) {
   body {
     background-size: auto;
