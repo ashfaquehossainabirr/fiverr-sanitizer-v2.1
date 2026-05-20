@@ -1,6 +1,5 @@
 const RESERVED_KEYWORDS = [
   "contact",
-  "review",
   "paid",
   "pay",
   "payment",
@@ -36,12 +35,16 @@ const RESERVED_KEYWORDS = [
   "book",
   "booking",
   "service",
-  "services",
+  "services"
 ];
+
+const REPLACEMENT_KEYWORDS = {
+  review: "check",
+  feedback: "response"
+};
 
 const URL_REGEX =
   /\bhttps?:\/\/[^\s]+|\bwww\.[^\s]+|\b[a-z0-9-]+\.(com|net|org|io|co|me|info)\b/gi;
-
 
 function sanitizeWord(word) {
   if (!word || word.length < 2) return word;
@@ -61,16 +64,16 @@ export function sanitizeText(text) {
     return placeholder;
   });
 
+  Object.entries(REPLACEMENT_KEYWORDS).forEach(([keyword, replacement]) => {
+    const regex = new RegExp(`\\b${keyword}\\b`, "gi");
+    sanitized = sanitized.replace(regex, replacement);
+  });
+
   RESERVED_KEYWORDS.forEach((keyword) => {
     const regex = new RegExp(`\\b${keyword}\\b`, "gi");
-
-    sanitized = sanitized.replace(regex, (match) => {
-      if (match.toLowerCase() === "review") {
-        return "check";
-      }
-
-      return sanitizeWord(match);
-    });
+    sanitized = sanitized.replace(regex, (match) =>
+      sanitizeWord(match)
+    );
   });
 
   urls.forEach((url, index) => {
@@ -82,11 +85,14 @@ export function sanitizeText(text) {
 
 export function containsRestrictedContent(text) {
   if (!text) return false;
-  
+
   const textWithoutUrls = text.replace(URL_REGEX, "");
 
   const keywordRegex = new RegExp(
-    `\\b(${RESERVED_KEYWORDS.join("|")})\\b`,
+    `\\b(${[
+      ...RESERVED_KEYWORDS,
+      ...Object.keys(REPLACEMENT_KEYWORDS)
+    ].join("|")})\\b`,
     "i"
   );
 
