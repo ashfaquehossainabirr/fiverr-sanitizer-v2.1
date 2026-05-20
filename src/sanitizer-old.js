@@ -1,3 +1,5 @@
+// Reserved keywords (substring detection)
+
 const RESERVED_KEYWORDS = [
   "contact",
   "review",
@@ -20,7 +22,9 @@ const RESERVED_KEYWORDS = [
   "price",
   "money",
   "fuck",
+  "linkedin",
   "youtube",
+  "instagram",
   "gmail",
   "google",
   "call",
@@ -36,16 +40,19 @@ const RESERVED_KEYWORDS = [
   "book",
   "booking",
   "service",
-  "services",
+  "services"
 ];
 
+// URL detection (strict)
 const URL_REGEX =
   /\bhttps?:\/\/[^\s]+|\bwww\.[^\s]+|\b[a-z0-9-]+\.(com|net|org|io|co|me|info)\b/gi;
 
-
+/**
+ * Insert "_" after first character
+ */
 function sanitizeWord(word) {
   if (!word || word.length < 2) return word;
-  if (word[1] === "_") return word;
+  if (word[1] === "_") return word; // prevent double sanitize
   return `${word[0]}_${word.slice(1)}`;
 }
 
@@ -54,6 +61,7 @@ export function sanitizeText(text) {
 
   let sanitized = text;
 
+  // Extract URLs and replace with placeholders
   const urls = [];
   sanitized = sanitized.replace(URL_REGEX, (match) => {
     const placeholder = `__URL_${urls.length}__`;
@@ -61,18 +69,15 @@ export function sanitizeText(text) {
     return placeholder;
   });
 
+  // Sanitize ONLY whole reserved words (outside URLs)
   RESERVED_KEYWORDS.forEach((keyword) => {
     const regex = new RegExp(`\\b${keyword}\\b`, "gi");
-
-    sanitized = sanitized.replace(regex, (match) => {
-      if (match.toLowerCase() === "review") {
-        return "check";
-      }
-
-      return sanitizeWord(match);
-    });
+    sanitized = sanitized.replace(regex, (match) =>
+      sanitizeWord(match)
+    );
   });
 
+  // Restore original URLs
   urls.forEach((url, index) => {
     sanitized = sanitized.replace(`__URL_${index}__`, url);
   });
@@ -82,7 +87,8 @@ export function sanitizeText(text) {
 
 export function containsRestrictedContent(text) {
   if (!text) return false;
-  
+
+  // Remove URLs before checking
   const textWithoutUrls = text.replace(URL_REGEX, "");
 
   const keywordRegex = new RegExp(
