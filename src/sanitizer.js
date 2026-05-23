@@ -40,7 +40,8 @@ const RESERVED_KEYWORDS = [
 
 const REPLACEMENT_KEYWORDS = {
   review: "check",
-  feedback: "response"
+  feedback: "response",
+  reviewed: "checked"
 };
 
 const URL_REGEX =
